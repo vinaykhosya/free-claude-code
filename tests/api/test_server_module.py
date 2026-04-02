@@ -16,7 +16,7 @@ def test_server_main_invokes_uvicorn_run(monkeypatch):
 
     # Patch settings used by server.__main__ block.
     old_get_settings = settings_mod.get_settings
-    mock_settings = SimpleNamespace(host="127.0.0.1", port=9999)
+    mock_settings = SimpleNamespace(host="127.0.0.1", port=9999, log_file="server.log")
 
     try:
         with (
